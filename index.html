@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensah Anni Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.csss">
+</head>
+<body>
+    <style>
+        *{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: poppins, sans-serif;
+    text-decoration: none;
+}
+body{ 
+    overflow-x: hidden;
+    background: #f2f1f1;
+}
+
+.hero-header {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+   
+}
+
+.wrapper {
+    width: 1280px;
+    max-width: 95%;
+    margin:0 auto;
+    padding: 0 20px;
+}
+
+header {
+    padding: 40px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo i {
+    height: 45px;
+    width: 45px;
+    background-color: rgb(118, 118, 118);
+    border-radius: 50px;
+    color: #000000;
+    font-weight: 700;
+    font-size:  1.5rem;
+    padding: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.logo .logo-text {
+    font-size: 24px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 4rem;
+}
+
+.container .hero-pic {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 15px solid rgb(94, 92, 92);
+    box-shadow: 5px 7px 20px black;
+}
+
+.hero-pic img {
+    height: 100%;
+    width: 100%;
+    transition: 0.5s;
+}
+
+.hero-pic img:hover {
+ transform: scale(1.2);
+}
+
+.hero-txt {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-txt h5 span{
+    color:rgb(29, 17, 242);
+    font-size: 1.2rem;
+}
+
+.hero-txt h1 {
+    color:rgb(48, 47, 47);
+    font-size: 3rem;
+}
+
+.hero-txt p {
+    color: rgb(34, 33, 33);
+    font-size: 20px;
+}
+
+.btn-console {
+    margin: 45px 0;
+    cursor: pointer;
+}
+
+.btn-console .btn {
+    border-color: rgb(0, 0, 0);
+    color: #000000;
+    background-color: rgb(247, 249, 249);
+    padding: 12px 15px;
+    margin: 5px 0px;
+    margin-right: 7px;
+    border-radius: 30px;
+    border: 2px solid rgb(0, 0, 0);
+    box-shadow: 0 10px 10px -8px rgb(0, 0, 0);
+}
+
+.btn-console .btn:hover {
+    background-color: #424141;
+    font-style: oblique;
+}
+.btn-active :hover{
+    border-color: black;
+}
+
+/* About Me Section */
+.about-me {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.about-me h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.about-me p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.about-me div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.about-me img {
+    width: 45%;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-me img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.about-me div p {
+    width: 50%;
+    font-size: 2rem;
+    color: #444;
+    line-height: 1.6;
+    padding: 0 20px;
+}
+
+.contact {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.contact h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.contact img {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline;
+}
+
+.contact img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Alternate Layout */
+#learning {
+    flex-direction: row;
+}
+
+#coding {
+    flex-direction: row-reverse;
+}
+
+#sport {
+    flex-direction: row;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-me div {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-me img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .about-me div p {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+
+.hero-txt .social i{
+    color: black;
+    font-size: 18px;
+    transition: 0.5s;
+    height: 2em;
+}
+
+.hro-txt .social a{
+    height: 2em;
+    color: #000000;
+}
+
+.social i :hover {
+    color:#424141;
+    size: 15px;
+}
+
+
+/* Media*/
+
+@media(max-width:930px) {  
+
+
+   
+
+@media(max-width:768px) {
+    .container{
+        flex-direction: column;
+        padding-top: 40px 0px;
+    }
+
+    .hero-txt{
+        padding: 40px 0px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-txt h1 {
+        font-size: 28px; /* Adjust heading size */
+    }
+
+    .hero-txt p {
+        font-size: 16px; /* Adjust paragraph size */
+    }
+
+    .btn-console {
+        flex-direction: row; /* Align buttons in a row */
+        justify-content: center;
+    }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-txt h1 {
+        font-size: 28px; /* Adjust heading size */
+    }
+
+    .hero-txt p {
+        font-size: 16px;
+    }
+}
+
+
+}
+    </style>
+        <div class="hero-header">
+            <div class="wrapper">
+                <header>
+                    <div class="logo">
+                        <i class="fa-solid fa-a">M</i>
+                        <div class="logo-text">Mensah Anni</div>
+                    </div>
+                   
+                </header>
+                <div class="container">
+                    <div class="hero-pic">
+                        <img src="Profile.pic1.png" alt="profile-pic">
+                    </div> 
+                    <div class="hero-txt">
+                        <h5>Hi I'm <span class="input">Frontend Developer</span></h5>
+                        <h1>Mensah Anni</h1>
+                        <p>I am a passionate and driven Level 200 IT student with a strong foundation in computer science and a keen
+                             interest in software development, web design, and emerging technologies. I thrive on solving problems,
+                              learning new skills, and applying innovative solutions to real-world challenges. My goal is to continuously
+                               grow and contribute meaningfully to the tech industry while building impactful digital solutions.
+            
+                        </p>
+
+                        <div class="btn-console">
+                            <a href="#" class="btn active">Download CV</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <section class="about-me">
+            <h1>About Me</h1>
+            <p>Enjoy the picture gallery of my hobbies!</p>
+        
+            <div id="learning">
+                <img src="istockphoto-1581045672-612x612.jpg" alt="Learning time">
+                <p>I love to take my learning time seriously.</p>
+            </div>
+        
+            <div id="coding">
+                <img src="rear-view-african-young-programmer-260nw-2179743043.webp" alt="Coding time">
+                <p>I don't joke with my coding time because practice makes perfect.</p>
+            </div>
+        
+            <div id="sport">
+                <img src="63374a294d423e00181ff2e3.webp" alt="Basketball time">
+                <p>
+                    When I am not learning or coding, you will find me on the basketball court. 
+                    This helps me to get fit and release stress because "all work and no play makes Jack a dull boy."
+                </p>
+            </div>
+        </section>
+        
+        <section class="contact">
+            <h1>Contact</h1>
+            <p>You can easily find me on the following platforms!</p>
+            <img src="email.png" alt="email icon" onclick="window.location.href='mailto:mensahanni98@gmail.com'">
+            <img src="github.png" alt="github" onclick="windw.location.href='https://githu.com/mcannison'">
+            <img src="linkedin.png" alt="linkedin" onclick="window.location.href='https://www.linkedin.com'">
+        </section>
+</body>
+</html>
