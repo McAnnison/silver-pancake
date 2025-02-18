@@ -287,10 +287,13 @@
                 "total production": `Total production is ${document.getElementById('total-production').innerText}`,
                 "total dispatched": `Total dispatched is ${document.getElementById('total-dispatched').innerText}`,
                 "quantities remaining": `Quantities remaining are ${document.getElementById('quantities-remaining').innerText}`,
-                "help": "You can ask about current stock, total production, total dispatched, and quantities remaining."
+                "weekly sales analysis": "Number of products sold: 150\nNumber of products returned: 5\nPotential causes for low sales: Limited marketing efforts, high competition, seasonal decline.\nSuggestions for improvement: Increase marketing efforts, offer discounts or promotions, analyze competitor strategies.",
+                "monthly sales analysis": "Number of products sold: 600\nNumber of products returned: 20\nPotential causes for low sales: Economic downturn, product issues, lack of customer engagement.\nSuggestions for improvement: Improve product quality, engage with customers through social media, offer loyalty programs.",
+                "overall analysis": "Number of products sold this year: 7200\nNumber of products returned this year: 100\nOverall performance: Moderate growth with some fluctuations.\nFuture strategies: Expand product line, enter new markets, enhance customer service.",
+                "help": "You can ask about current stock, total production, total dispatched, quantities remaining, weekly sales analysis, monthly sales analysis, and overall analysis."
             };
 
-            const response = responses[message.toLowerCase()] || "Sorry, I didn't understand that. Try asking about current stock, total production, total dispatched, or quantities remaining.";
+            const response = responses[message.toLowerCase()] || "Sorry, I didn't understand that. Try asking about current stock, total production, total dispatched, quantities remaining, weekly sales analysis, monthly sales analysis, or overall analysis.";
 
             setTimeout(() => addMessage('bot', response), 500);
         }
