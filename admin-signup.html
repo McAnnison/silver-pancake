@@ -19,6 +19,24 @@
             flex-direction: column;
         }
 
+        .navbar {
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+        }
+
         .signup-container {
             background-color: #ffffff;
             padding: 40px;
@@ -64,35 +82,25 @@
             background-color: #555;
         }
 
-        .signup-container .signin-link {
+        .signin-link {
             margin-top: 20px;
             color: #555;
         }
 
-        .signup-container .signin-link a {
+        .signin-link a {
             color: #333;
             text-decoration: none;
             font-weight: bold;
         }
 
-        .signup-container .signin-link a:hover {
+        .signin-link a:hover {
             text-decoration: underline;
         }
-
-        .home-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #333;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .home-button:hover {
-            background-color: #555;
-        }
     </style>
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+    </div>
 
     <div class="signup-container">
         <h2>Admin Signup</h2>
@@ -114,7 +122,6 @@
         <div class="signin-link">
             <p>Already have an account? <a href="admin-login.html">Sign In</a></p>
         </div>
-        <button class="home-button" onclick="window.location.href='index.html'">Home</button>
     </div>
 </body>
 </html>
