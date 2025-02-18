@@ -16,6 +16,7 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            flex-direction: column;
         }
 
         .signin-container {
@@ -77,6 +78,20 @@
         .signin-container .signup-link a:hover {
             text-decoration: underline;
         }
+
+        .home-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .home-button:hover {
+            background-color: #555;
+        }
     </style>
 
     <div class="signin-container">
@@ -93,6 +108,7 @@
         <div class="signup-link">
             <p>Don't have an account? <a href="admin-signup.html">Sign Up</a></p>
         </div>
+        <button class="home-button" onclick="window.location.href='index.html'">Home</button>
     </div>
 </body>
 </html>
