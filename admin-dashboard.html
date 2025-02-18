@@ -111,6 +111,71 @@
         .analysis-card p {
             color: #555;
         }
+
+        /* Chatbot Styles */
+        .chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            max-width: 100%;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chatbot-header {
+            background-color: #0277bd;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        .chatbot-input-container {
+            display: flex;
+            border-top: 1px solid #ccc;
+        }
+
+        .chatbot-input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 0;
+        }
+
+        .chatbot-send-button {
+            padding: 10px;
+            background-color: #0277bd;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .chatbot-send-button:hover {
+            background-color: #01579b;
+        }
+
+        .chatbot-message {
+            margin-bottom: 10px;
+        }
+
+        .chatbot-message.user {
+            text-align: right;
+        }
+
+        .chatbot-message.bot {
+            text-align: left;
+        }
     </style>
 
     <div class="dashboard-header">
@@ -165,6 +230,16 @@
         </div>
     </div>
 
+    <!-- Chatbot -->
+    <div class="chatbot-container" id="chatbot">
+        <div class="chatbot-header">Stock Chatbot</div>
+        <div class="chatbot-messages" id="chatbot-messages"></div>
+        <div class="chatbot-input-container">
+            <input type="text" id="chatbot-input" class="chatbot-input" placeholder="Ask a question...">
+            <button class="chatbot-send-button" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
     <script>
         // Fetch stock data and update the stats
         fetch('/api/stock', {
@@ -193,6 +268,40 @@
             document.getElementById('quantities-remaining').innerText = quantitiesRemaining;
         })
         .catch(error => console.error('Error fetching stock data:', error));
+
+        // Chatbot functionality
+        const chatbot = document.getElementById('chatbot');
+        const chatbotMessages = document.getElementById('chatbot-messages');
+        const chatbotInput = document.getElementById('chatbot-input');
+
+        function sendMessage() {
+            const message = chatbotInput.value.trim();
+            if (message === '') return;
+
+            addMessage('user', message);
+            chatbotInput.value = '';
+
+            // Simple responses for the chatbot
+            const responses = {
+                "current stock": `Current stock is ${document.getElementById('current-stock').innerText}`,
+                "total production": `Total production is ${document.getElementById('total-production').innerText}`,
+                "total dispatched": `Total dispatched is ${document.getElementById('total-dispatched').innerText}`,
+                "quantities remaining": `Quantities remaining are ${document.getElementById('quantities-remaining').innerText}`,
+                "help": "You can ask about current stock, total production, total dispatched, and quantities remaining."
+            };
+
+            const response = responses[message.toLowerCase()] || "Sorry, I didn't understand that. Try asking about current stock, total production, total dispatched, or quantities remaining.";
+
+            setTimeout(() => addMessage('bot', response), 500);
+        }
+
+        function addMessage(sender, text) {
+            const message = document.createElement('div');
+            message.className = `chatbot-message ${sender}`;
+            message.innerText = text;
+            chatbotMessages.appendChild(message);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
     </script>
 </body>
-</html>
+                    </html>
