@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Sign In - SDK ALKALINE DASHBOARD</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<body>
+    <style>
+        body {
+            overflow-x: hidden;
+            background: #f2f1f1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .signin-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        .signin-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .signin-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .signin-container form label {
+            margin-bottom: 10px;
+            color: #555;
+            text-align: left;
+        }
+
+        .signin-container form input {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .signin-container form button {
+            padding: 10px;
+            background-color: #333;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .signin-container form button:hover {
+            background-color: #555;
+        }
+
+        .signin-container .signup-link {
+            margin-top: 20px;
+            color: #555;
+        }
+
+        .signin-container .signup-link a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signin-container .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <div class="signin-container">
+        <h2>Admin Sign In</h2>
+        <form>
+            <label for="admin-email">Email</label>
+            <input type="email" id="admin-email" name="admin-email" required>
+
+            <label for="admin-password">Password</label>
+            <input type="password" id="admin-password" name="admin-password" required>
+
+            <button type="submit" onclick="window.location.href='admin-dashboard.html'">Sign In</button>
+        </form>
+        <div class="signup-link">
+            <p>Don't have an account? <a href="admin-signup.html">Sign Up</a></p>
+        </div>
+    </div>
+</body>
+</html>
