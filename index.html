@@ -40,26 +40,27 @@
             display: inline-flex;
             justify-content: center;
             align-items: center;
-        }
-
-        .logo i {
-            height: 45px;
-            width: 45px;
-            background-color: rgb(118, 118, 118);
-            border-radius: 50px;
-            color: #000000;
-            font-weight: 700;
-            font-size: 1.5rem;
-            padding: 10px;
-            margin-right: 5px;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .logo .logo-text {
             font-size: 24px;
-            font-weight: 600;
+            font-weight: bold;
             color: rgb(0, 0, 0);
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-buttons button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .header-buttons button:hover {
+            background-color: #555;
         }
 
         .container {
@@ -119,11 +120,11 @@
     <div class="hero-header">
         <div class="wrapper">
             <header>
-                <div class="logo">
-                    <i class="fa-solid fa-a">SDK</i>
-                    <div class="logo-text">ALKALINE DASHBOARD</div>
+                <div class="logo">SDK ALKALINE DASHBOARD</div>
+                <div class="header-buttons">
+                    <button onclick="window.location.href='admin-signup.html'">Admin Sign Up</button>
+                    <button onclick="window.location.href='admin-login.html'">Admin Sign In</button>
                 </div>
-                <button onclick="window.location.href='admin-signup.html'">Admin Sign Up</button>
             </header>
             <div class="container">
                 <div class="form-container">
