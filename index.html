@@ -3,27 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SDK Alkaline Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>SDK ALKALINE DASHBOARD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <style>
         body {
             overflow-x: hidden;
-            background: linear-gradient(to right, #e0f7fa, #80deea);
-            font-family: Arial, sans-serif;
-            animation: fadeIn 1s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            background: linear-gradient(135deg, #00b7c4, #009688);
+            font-family: 'Poppins', sans-serif;
         }
 
         .hero-header {
             width: 100%;
+            height: 100%;
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
         }
@@ -33,39 +29,47 @@
             max-width: 95%;
             margin: 0 auto;
             padding: 0 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
         }
 
         header {
-            padding: 20px 0;
+            padding: 40px 0 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #0277bd;
-            color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            padding: 20px;
+            flex-wrap: wrap;
         }
 
         .logo {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
             font-size: 24px;
             font-weight: bold;
+            color: #00b7c4;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
         }
 
         .header-buttons button {
             padding: 10px 20px;
-            background-color: white;
-            color: #0277bd;
+            background-color: #00b7c4;
+            color: #ffffff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: background-color 0.3s ease-in-out;
         }
 
         .header-buttons button:hover {
-            background-color: #01579b;
-            color: white;
-            transform: scale(1.1);
+            background-color: #009688;
         }
 
         .container {
@@ -73,64 +77,102 @@
             justify-content: center;
             align-items: center;
             padding-top: 4rem;
+            padding-bottom: 4rem;
         }
 
         .form-container {
-            background: white;
-            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 40px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            width: 400px;
-            text-align: center;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .form-container:hover {
-            transform: translateY(-10px);
+            animation: slideUp 1s ease-in-out;
         }
 
         .form-container h2 {
             margin-bottom: 20px;
             color: #333;
+            text-align: center;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .form-container form label {
+            margin-bottom: 10px;
+            color: #555;
+            font-weight: 600;
         }
 
         .form-container form input {
-            width: 100%;
             padding: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            transition: 0.3s;
+            transition: border-color 0.3s ease-in-out;
         }
 
         .form-container form input:focus {
-            border-color: #0277bd;
             outline: none;
+            border-color: #00b7c4;
         }
 
         .form-container form button {
             padding: 10px;
-            background-color: #0277bd;
+            background-color: #00b7c4;
             color: #ffffff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: background-color 0.3s ease-in-out;
         }
 
         .form-container form button:hover {
-            background-color: #01579b;
-            transform: scale(1.05);
+            background-color: #009688;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @media (max-width: 768px) {
+            .wrapper {
+                padding: 0 10px;
+            }
+
+            .header-buttons {
+                margin-top: 20px;
+            }
+
             .container {
                 flex-direction: column;
-                text-align: center;
             }
 
             .form-container {
-                width: 90%;
+                width: 100%;
             }
         }
     </style>
@@ -149,12 +191,24 @@
                 <div class="form-container">
                     <h2>Stock Control Form</h2>
                     <form>
-                        <input type="number" id="opening-stock" name="opening-stock" placeholder="Opening Stock" required>
-                        <input type="number" id="production" name="production" placeholder="Production" required>
-                        <input type="number" id="total-in-stock" name="total-in-stock" placeholder="Total in Stock" readonly>
-                        <input type="number" id="dispatched" name="dispatched" placeholder="Dispatched" required>
-                        <input type="number" id="quantities-remaining" name="quantities-remaining" placeholder="Quantities Remaining" readonly>
-                        <input type="number" id="closing-stock" name="closing-stock" placeholder="Closing Stock" required>
+                        <label for="opening-stock">Opening Stock</label>
+                        <input type="number" id="opening-stock" name="opening-stock" required>
+
+                        <label for="production">Production</label>
+                        <input type="number" id="production" name="production" required>
+
+                        <label for="total-in-stock">Total in Stock</label>
+                        <input type="number" id="total-in-stock" name="total-in-stock" readonly>
+
+                        <label for="dispatched">Dispatched</label>
+                        <input type="number" id="dispatched" name="dispatched" required>
+
+                        <label for="quantities-remaining">Quantities Remaining</label>
+                        <input type="number" id="quantities-remaining" name="quantities-remaining" readonly>
+
+                        <label for="closing-stock">Closing Stock</label>
+                        <input type="number" id="closing-stock" name="closing-stock" required>
+
                         <button type="submit">Submit</button>
                     </form>
                 </div>
