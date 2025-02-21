@@ -224,7 +224,7 @@
                         <input type="number" id="total-in-stock" name="total-in-stock" readonly>
 
                         <label for="dispatched">Dispatched</label>
-                        <input type="number" id="dispatched" name="dispatched" required>
+                        <input type="number" id="dispatched" name="dispatched" required oninput="calculateQuantitiesRemaining()">
 
                         <label for="quantities-remaining">Quantities Remaining</label>
                         <input type="number" id="quantities-remaining" name="quantities-remaining" readonly>
@@ -263,6 +263,22 @@
             const quantitiesRemaining = totalInStock - dispatched;
             document.getElementById('quantities-remaining').value = quantitiesRemaining;
         }
+
+        document.getElementById('production').addEventListener('input', function() {
+            const openingStock = Number(document.getElementById('opening-stock').value);
+            const production = Number(this.value);
+            const totalInStock = openingStock + production;
+            document.getElementById('total-in-stock').value = totalInStock;
+            calculateQuantitiesRemaining();
+        });
+
+        document.getElementById('opening-stock').addEventListener('input', function() {
+            const production = Number(document.getElementById('production').value);
+            const openingStock = Number(this.value);
+            const totalInStock = openingStock + production;
+            document.getElementById('total-in-stock').value = totalInStock;
+            calculateQuantitiesRemaining();
+        });
     </script>
 </body>
 </html>
