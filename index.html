@@ -236,21 +236,27 @@
                     </form>
                 </div>
             </div>
+
+            <div class="container">
+                <div class="form-container">
+                    <h2>Image and Water Level Form</h2>
+                    <form>
+                        <label for="shrink-wrap-size">Shrink Wrap Size</label>
+                        <input type="file" id="shrink-wrap-size" name="shrink-wrap-size" accept="image/*" required>
+
+                        <label for="labels">Labels</label>
+                        <input type="file" id="labels" name="labels" accept="image/*" required>
+
+                        <label for="water-level">Water Level in Tank</label>
+                        <input type="number" id="water-level" name="water-level" required>
+
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
     <script>
-        document.getElementById('opening-stock').addEventListener('input', calculateTotalInStock);
-        document.getElementById('production').addEventListener('input', calculateTotalInStock);
-        document.getElementById('dispatched').addEventListener('input', calculateQuantitiesRemaining);
-
-        function calculateTotalInStock() {
-            const openingStock = Number(document.getElementById('opening-stock').value);
-            const production = Number(document.getElementById('production').value);
-            const totalInStock = openingStock + production;
-            document.getElementById('total-in-stock').value = totalInStock;
-            calculateQuantitiesRemaining();
-        }
-
         function calculateQuantitiesRemaining() {
             const totalInStock = Number(document.getElementById('total-in-stock').value);
             const dispatched = Number(document.getElementById('dispatched').value);
