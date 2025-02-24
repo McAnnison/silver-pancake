@@ -1,0 +1,34 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description" : "API for a Water Company Stock Control",
+        "version": "1.0.0",
+        "title": "SDK Alkaline Water Company Stock Control"
+    },
+    "paths": {
+        "/api/stock": {
+            "get": {
+                "tags": [
+                    "stock"
+                ],
+                "summary": "Get all stock",
+                "description": "Get all stock",
+                "operationId": "getAllStock",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Stock"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
