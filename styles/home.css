@@ -1,139 +1,240 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: #ffffff;
-  padding: 20px;
-}
-
-.header {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  color: #333;
-}
-
-.logo {
-  font-size: 3rem;
-  font-weight: bold;
-}
-
-.motto {
-  font-size: 1.5rem;
-  font-style: italic;
-}
-
-.card {
-  width: 100%;
-  max-width: 600px;
-  word-spacing: 12px;
-  min-height: 800px;
-  padding: 12px 12px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.tabs {
-  display: flex;
-  justify-content: space-between;
-  background-color: #f0f0f0;
-  padding: 5px;
-  border-radius: 10px;
-}
-
-.tab-button {
-  flex: 1;
-  padding: 15px;
-  background-color: transparent;
-  color: #333;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  font-size: 1.2rem;
-}
-
-.tab-button.active {
-  background-color: #e0e0e0;
-}
-
-.tab-button:hover {
-  background-color: #e0e0e0;
-}
-
-.tab-content {
-  margin-top: 20px;
-}
-
-.input {
-  width: 100%;
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1.2rem;
-}
-
-.button {
-  width: 100%;
-  padding: 15px;
-  background-color: transparent;
-  color: #333;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  font-size: 1.2rem;
-}
-
-.button:hover {
-  background-color: #e0e0e0;
-}
-
-.signup-link {
-  margin-top: 20px;
-  font-size: 1.2rem;
-  color: #333;
-}
-
-.signup-link a {
-  color: #0277bd;
-  text-decoration: none;
-}
-
-.signup-link a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 600px) {
-  .card {
-    padding: 30px;
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
   }
-
-  .logo {
+  
+  /* Body Styling */
+  body {
+    background: linear-gradient(135deg, #1114cb, #377df5);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Container */
+  .container {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  /* Header */
+  .header {
+    margin-bottom: 2rem;
+  }
+  
+  .header .logo {
     font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    animation: fadeInDown 1s ease-in-out;
   }
-
-  .motto {
-    font-size: 1.2rem;
+  
+  .header .motto {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    animation: fadeInUp 1s ease-in-out;
   }
-
+  
+  /* Card */
+  .card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    animation: scaleIn 0.8s ease-in-out;
+  }
+  
+  /* Tabs */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  
   .tab-button {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
     font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
   }
-
+  
+  .tab-button.active {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+  }
+  
+  .tab-button:hover {
+    color: #fff;
+  }
+  
+  /* Tab Content */
+  .tab-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
   .input {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
     font-size: 1rem;
+    outline: none;
+    transition: background 0.3s ease;
   }
-
+  
+  .input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .input:focus {
+    background: rgba(255, 255, 255, 0.3);
+  }
+  
+  select.input {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+  }
+  
   .button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    background: #2575fc;
+    color: #fff;
     font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
   }
-
+  
+  .button:disabled {
+    background: rgba(37, 117, 252, 0.5);
+    cursor: not-allowed;
+  }
+  
+  .button:hover:not(:disabled) {
+    background: #6a11cb;
+  }
+  
+  /* Error Message */
+  .error-message {
+    color: #ff6b6b;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    animation: shake 0.5s ease-in-out;
+  }
+  
+  /* Sign Up Link */
   .signup-link {
-    font-size: 1rem;
+    margin-top: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
   }
-}
+  
+  .signup-link a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .signup-link a:hover {
+    color: #6a11cb;
+  }
+  
+  /* Animations */
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    75% {
+      transform: translateX(-10px);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    .header .logo {
+      font-size: 2rem;
+    }
+  
+    .header .motto {
+      font-size: 0.875rem;
+    }
+  
+    .card {
+      padding: 1.5rem;
+    }
+  
+    .tab-button {
+      font-size: 0.875rem;
+    }
+  
+    .input, .button {
+      padding: 0.5rem;
+      font-size: 0.875rem;
+    }
+  
+    .signup-link {
+      font-size: 0.75rem;
+    }
+  }

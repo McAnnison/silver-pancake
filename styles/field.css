@@ -1,0 +1,196 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Field Manager Container */
+.field-manager-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f4f6f8;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  animation: scaleIn 0.8s ease-in-out;
+}
+
+/* Title */
+.title {
+  font-size: 2rem;
+  color: #0277bd;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fadeInDown 0.8s ease-in-out;
+}
+
+/* Forms */
+.sales-form,
+.complaint-form {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+.form-title {
+  font-size: 1.5rem;
+  color: #0277bd;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  border-color: #0277bd;
+}
+
+textarea.input {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #0277bd;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  background: #01579b;
+}
+
+/* Total Cartons Sold */
+.total-cartons {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+.total-cartons h3 {
+  font-size: 1.25rem;
+  color: #333;
+}
+
+/* Sales Records */
+.sales-records {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+.sales-records h2 {
+  font-size: 1.5rem;
+  color: #0277bd;
+  margin-bottom: 15px;
+}
+
+.sales-records ul {
+  list-style: none;
+}
+
+.record-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+
+.record-item:last-child {
+  border-bottom: none;
+}
+
+.record-item p {
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .field-manager-container {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .form-title {
+    font-size: 1.25rem;
+  }
+
+  .input,
+  .button {
+    font-size: 0.875rem;
+  }
+}

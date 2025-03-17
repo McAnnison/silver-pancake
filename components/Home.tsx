@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"; 
 import "../styles/home.css";
 
 export default function Home() {
@@ -37,24 +37,24 @@ export default function Home() {
     setError("");
     setLoading(true);
 
-    // Simulate API call for sign-in
+    //API call for sign-in
     setTimeout(() => {
       setLoading(false);
+
+      // Redirect based on role
       switch (role) {
         case "Worker":
-          router.push("/stock");
+          router.push("/pages/StockPage"); 
           break;
         case "CEO":
-          router.push("/AdminDashboard");
+          router.push("/pages/AdminDashboard"); 
           break;
         case "Factory Supervisor":
-          router.push("/supervisor");
-          break;
+          router.push("/pages/supervisor"); 
         case "Field Manager":
-          router.push("/field");
-          break;
+          router.push("/pages/fieldManager"); 
         default:
-          console.log("Redirect to other pages based on role");
+          setError("Invalid role selected.");
       }
     }, 1000);
   };
@@ -126,7 +126,10 @@ export default function Home() {
         )}
       </motion.div>
       <p className="signup-link">
-        Don&apos;t have an account? <a href="#" onClick={() => setActiveTab("signup")}>Sign up</a>
+        Don&apos;t have an account?{" "}
+        <a href="#" onClick={() => setActiveTab("signup")}>
+          Sign up
+        </a>
       </p>
     </div>
   );
